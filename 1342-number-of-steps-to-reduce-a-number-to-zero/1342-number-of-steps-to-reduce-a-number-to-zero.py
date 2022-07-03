@@ -9,4 +9,8 @@ class Solution:
           n -=1 
           count += 1
       return count 
-          
+    
+    
+# Time: O(log n) because n // 2 -> half the space 
+# Space: O(1) -> constant 
+# Question about conditions 
