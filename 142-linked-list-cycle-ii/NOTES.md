@@ -1,0 +1,1 @@
+Can use hash map or two pointers [similiar questions to find mid in linked list]
