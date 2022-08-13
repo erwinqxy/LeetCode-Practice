@@ -4,16 +4,15 @@ class Solution:
       p1 = 0 
       p2 = len(s) - 1
       while p1 < p2:
-        c1 = s[p1].lower() 
-        c2 = s[p2].lower()  
-        if (c1.isalnum()):
-          if (c2.isalnum()):
-            if c1 == c2:
-              p1 += 1
-              p2 -= 1
-            else: return False 
-          else:
-            p2 -= 1 
-        else:
+        while p1 < p2 and not s[p1].isalnum():
           p1 += 1 
+        while p1 < p2 and not s[p2].isalnum():
+          p2 -= 1 
+          
+        if s[p1].lower() != s[p2].lower():
+          return False 
+        
+        p1 += 1 
+        p2 -= 1
+        
       return True 
