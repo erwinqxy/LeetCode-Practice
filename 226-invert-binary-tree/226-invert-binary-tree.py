@@ -11,7 +11,6 @@ class Solution:
       if root: 
         t1 = self.invertTree(root.left) 
         t2 = self.invertTree(root.right)
-        temp = root.right
         root.right = t1
         root.left = t2
       
