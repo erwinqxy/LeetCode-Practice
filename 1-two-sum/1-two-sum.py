@@ -1,15 +1,10 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        for i in range (len(nums)):
-          curr = nums[i] 
-          require = target - curr 
-          
-          if require in (nums[i+1:]):
-            for j in range(i+1, len(nums)):
-              if nums[j] == require:
-                return [i, j]
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+      # precommute the array and check back 
+      mappings = {} 
+      for i in range (len(nums)):
+        rem = target - nums[i] 
+        if (rem in mappings): 
+          return [i, mappings[rem]]
+        if (nums[i] not in mappings):
+          mappings[nums[i]] = i
