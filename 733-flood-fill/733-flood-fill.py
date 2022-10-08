@@ -1,11 +1,12 @@
 class Solution:
-    def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
+    def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
+      # can use a stack to push things to fill
         R, C = len(image), len(image[0])
-        color = image[sr][sc]
-        if color == newColor: return image
+        currColor = image[sr][sc]
+        if currColor == color: return image
         def dfs(r, c):
-            if image[r][c] == color:
-                image[r][c] = newColor
+            if image[r][c] == currColor:
+                image[r][c] = color
                 if r >= 1: dfs(r-1, c)
                 if r+1 < R: dfs(r+1, c)
                 if c >= 1: dfs(r, c-1)
