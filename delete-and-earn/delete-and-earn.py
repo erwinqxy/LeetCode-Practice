@@ -1,4 +1,5 @@
 class Solution:
+    # Note this problem is somewhat similiar to the House Robber Problem 
     def deleteAndEarn(self, nums: List[int]) -> int:
         points = defaultdict(int)
         max_number = 0
