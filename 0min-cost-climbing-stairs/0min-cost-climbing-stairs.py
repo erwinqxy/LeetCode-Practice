@@ -2,7 +2,6 @@ class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
         n = len(cost)
         table = [0] * (n+1) 
-        table[n] = 0
         
         for i in range (2, n+1):
             take_one_step = table[i - 1] + cost[i - 1]
